@@ -43,6 +43,7 @@ pipeline {
                 parameters {
                     string(name: 'PERSON', defaultValue: 'Mr Meerjan')
                 }
+            }
         stage('Test') {
             steps {
                 sh 'echo This is test'
@@ -68,4 +69,3 @@ pipeline {
         }
     }
 }
-
