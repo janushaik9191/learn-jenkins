@@ -35,6 +35,14 @@ pipeline {
                 cron('H/2 * * * *')
             }
         }
+        stage('Approvel') {
+            input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "alice,bob"
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Meerjan')
+                }
         stage('Test') {
             steps {
                 sh 'echo This is test'
