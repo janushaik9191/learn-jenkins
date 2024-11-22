@@ -2,10 +2,10 @@ pipeline {
     agent {
         label "AGENT-1"
     }
-    options {
-        // Timeout counter starts AFTER agent is allocated
-        timeout(time: 30, unit: 'SECONDS')
-    }
+    // options {
+    //     // Timeout counter starts AFTER agent is allocated
+    //     timeout(time: 30, unit: 'SECONDS')
+    // }
     stages {
         stage('Build') {
             steps {
