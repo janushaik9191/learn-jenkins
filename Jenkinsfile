@@ -32,7 +32,7 @@ pipeline {
         }
         stage('Triggers') {
             steps{
-                cron('* * * * *')
+                cron('H/2 * * * *')
             }
         }
         stage('Test') {
