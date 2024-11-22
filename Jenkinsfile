@@ -1,7 +1,8 @@
 pipeline {
     agent {
         label "AGENT-1"
-        options {
+    }
+    options {
         // Timeout counter starts AFTER agent is allocated
         timeout(time: 10, unit: 'SECONDS')
     }
@@ -36,5 +37,4 @@ pipeline {
             echo "This section run when pipeline failure"
         }
     }
-}
 }
