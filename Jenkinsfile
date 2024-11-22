@@ -30,15 +30,11 @@ pipeline {
                 //sh 'sleep 30'
             }
         }
-        triggers {
-        cron('* * * * *')
-    }
-        stage('Build') {
-            steps {
-                sh 'echo This is build'
+        stage('Triggers') {
+            steps{
+                cron('* * * * *')
             }
         }
-
         stage('Test') {
             steps {
                 sh 'echo This is test'
