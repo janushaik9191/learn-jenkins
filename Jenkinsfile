@@ -2,10 +2,10 @@ pipeline {
     agent {
         label "AGENT-1"
     }
-    options {
-        // Timeout counter starts AFTER agent is allocated
-        timeout(time: 30, unit: 'SECONDS')
-    }
+    // options {
+    //     // Timeout counter starts AFTER agent is allocated
+    //     timeout(time: 30, unit: 'SECONDS')
+    // }
      parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
 
@@ -30,12 +30,12 @@ pipeline {
                 //sh 'sleep 30'
             }
         }
-        stage('Triggers') {
-            steps{
-                cron('H/2 * * * *')
-            }
-        }
-        stage('Approval'){
+        // stage('Triggers') {
+        //     steps{
+        //         cron('H/2 * * * *')
+        //     }
+        // }
+         stage('Approval'){
             input {
                 message "Should we continue?"
                 ok "Yes, we should."
